@@ -12,7 +12,7 @@ void moving();
 //--------------------------function pre-declarations---------------------------
 
 //-------------------------------global variables-------------------------------
-int areaX=50, areaY=25, snakeX, snakeY, forageX, forageY, snakemove, gameOver, score;
+int areaX=50, areaY=25, snakeX, snakeY, forageX, forageY, snakemove, gameOver, score, tryAgain=0;
 int tailX[100], tailY[100];
 int piece=0;
 char answer;
@@ -47,17 +47,17 @@ int main()
         }
         printf("                    GAME OVER\n\n");
         printf("                  Your score: %d\n\n", score);
-        printf("             Watch ads and go on?(Y/N)");
-        scanf("%c", &answer);
-
-        /*if(answer=="Y" || answer=="y")
+        if(tryAgain!=1)
         {
-            goto label0;
+            printf("             Watch ads and go on?(Y/N)");
+            scanf("%c", &answer);
         }
-        else if(answer=='N' || answer=='n')
-        {
-            exit;
-        }*/
+        else
+        {   
+            _sleep(1000);
+            exit(0);
+        }
+    
         switch(answer)
         {
             case 89:
@@ -81,6 +81,7 @@ int main()
                 printf("\n\n\n\n\n\n\n\n\n\n\n\n            M O N A   R O Z A\n\n");
                 printf("               G A M I N G");
                 _sleep(500);
+                tryAgain++;
                 goto label0;
                 break;
             }
@@ -88,6 +89,7 @@ int main()
 
             case 121:
             {   
+                
                 system("cls");
                 printf("\n\n\n\n\n\n\n\n\n\n\n\n            M O N A   R O Z A\n\n");
                 printf("               G A M I N G");
@@ -107,6 +109,7 @@ int main()
                 printf("\n\n\n\n\n\n\n\n\n\n\n\n            M O N A   R O Z A\n\n");
                 printf("               G A M I N G");
                 _sleep(500);
+                tryAgain++;
                 goto label0;
                 break;
             }
